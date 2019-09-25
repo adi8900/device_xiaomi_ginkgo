@@ -914,12 +914,12 @@ service profiler_daemon /system/bin/profiler_daemon
     group root
     disabled
 
-service charger /system/bin/charger
+service vendor.charger /system/bin/chargeronlymode
     class charger
-    user root
-    group root system graphics input
-    seclabel u:r:charger:s0
+    user system
+    group system graphics input
     capabilities SYS_BOOT
+    seclabel u:r:charger:s0
 
 service vendor.ssr_diag /system/vendor/bin/ssr_diag
     class late_start

@@ -2151,6 +2151,9 @@ vendor/lib64/vendor.qti.imsrtpservice@2.0.so|fdc13f23a021c98bd8f8ebb1169b2b5841f
 vendor/lib64/vendor.qti.imsrtpservice@2.1-service-Impl.so|18ce1a5a6214c539682ba98cae5f7c8ee5a70c5d
 vendor/lib64/vendor.qti.imsrtpservice@2.1.so|7b227f1a007619dcae8d541eabe99eb5581d226d
 
+# Power-off charging daemon - from sm6150-common
+-sbin/charger:bin/chargeonlymode|5665db380f55cad069f64d4ebd84e4dc41766f2a
+
 # Sensors
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
 vendor/bin/sensors.qti
