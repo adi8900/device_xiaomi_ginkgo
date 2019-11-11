@@ -236,6 +236,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.wfc_avail_ovr=1 \
     persist.radio.multisim.config=dsds \
     persist.sys.fflag.override.settings_network_and_internet_v2=true \
+    persist.vendor.ims.disableADBLogs=1 \
+    persist.vendor.ims.disableDebugLogs=1 \
+    persist.vendor.ims.disableIMSLogs=1 \
+    persist.vendor.ims.disableQXDMLogs=1 \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.atfwd.start=true \
     persist.vendor.radio.custom_ecc=1 \
@@ -264,7 +268,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_backpressure=1 \
     debug.sf.enable_gl_backpressure=1 \
     debug.sf.enable_hwc_vds=0
-    
+
 # Time
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.vendor.delta_time.enable=true
