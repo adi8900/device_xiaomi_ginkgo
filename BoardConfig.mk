@@ -51,6 +51,7 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/ginkgo
 TARGET_KERNEL_CONFIG := vendor/ginkgo-perf_defconfig
+TARGET_KERNEL_CLANG_VERSION := r377782b
 
 # Enable stats logging in LMKD
 TARGET_LMKD_STATS_LOG := true
