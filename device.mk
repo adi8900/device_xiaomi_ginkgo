@@ -100,8 +100,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
     libdng_sdk.vendor \
-    Snap \
-    libshim_camera
+    Snap
 
 $(call inherit-product, vendor/ANXCamera/config.mk)
 
