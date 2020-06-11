@@ -72,8 +72,10 @@ BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
-    antradio_app \
-    libantradio
+    com.dsi.ant.antradio_library
+
+PRODUCT_COPY_FILES += \
+    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
 
 # Atrace
 PRODUCT_PACKAGES += \
