@@ -25,9 +25,6 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a76
 
 BUILD_BROKEN_DUP_RULES := true
 
-MSMSTEPPE := trinket
-TARGET_SEPOLICY_DIR := trinket
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := ginkgo,willow
 
@@ -63,12 +60,13 @@ TARGET_KERNEL_CLANG_VERSION := r377782d
 # Platform
 TARGET_BOARD_PLATFORM := trinket
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno610
-
-# APEX
-DEXPREOPT_GENERATE_APEX_IMAGE := true
+TRINKET := trinket
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
+
+# APEX
+DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Audio
 AUDIO_FEATURE_ENABLED_AUDIOSPHERE := true
@@ -102,7 +100,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Charger Mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
-# CNE and DPM
+# CNE
 BOARD_USES_QCNE := true
 
 # Display
@@ -112,7 +110,7 @@ TARGET_USES_DISPLAY_RENDER_INTENTS := true
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
 # FM
 BOARD_HAVE_QCOM_FM := true
@@ -133,11 +131,14 @@ TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
+
+# LMKD
+TARGET_LMKD_STATS_LOG := true
 
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
@@ -195,20 +196,17 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+TARGET_SEPOLICY_DIR := trinket
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /vendor/lib/hw/camera.trinket.so|libshim_camera.so \
     /vendor/lib/libalRnBRT_GL_GBWRAPPER.so|libshim_camera.so
 
-# Telephony
-TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
-
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 BOARD_VNDK_VERSION := current
 PRODUCT_VENDOR_MOVE_ENABLED := true
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
